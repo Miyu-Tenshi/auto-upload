@@ -13,7 +13,7 @@ uploadRepo() {
     }
     push() {
         local ERR=${1:-0}
-        git push --set-upstream -f origin ${GITDATA[3]} 1> /dev/null
+        git push --set-upstream -f origin ${GITDATA[3]}
         if [ $? != 0 ] && [ $ERR == 0 ]; then 
             eval "$(ssh-agent -s)" &> /dev/null && ssh-add ~/.ssh/${GITDATA[0]} 2> /dev/null;
             [ $? != 0 ] && echo -en "$_cl$_l$_5[${_c}TIPS${_5}]$_f :$_3 if repository is private will must set ssh filename is username github$_rl" && exit 1;
