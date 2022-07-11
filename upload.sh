@@ -53,6 +53,7 @@ uploadRepo() {
         commit;
     }
     optional() {
+        #TODO เพิ่ม optional เสริม เช่น การแก้ไขข้อมูล, การขอความช่วยเหลือ
         case $1 in
             "") getData; commit;;
             "-i" | "init") initial;;
